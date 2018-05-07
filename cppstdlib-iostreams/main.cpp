@@ -36,20 +36,19 @@ int main()
 {
     std::vector<std::string> words;
 
-    //char input[128] = { 0 };
-    char input[] = "Jose Fernando Lopez Fernandez Gomez Gutierrez";
+    std::string input;
 
-    /*std::cout << "Enter message: ";
-    std::cin >> std::setw(128) >> input;
+    std::cout << "Enter message: ";
+    std::getline(std::cin, input);
 
     if (std::cin.fail())
     {
         std::cerr << "[Error]: Failed to read user input." << NL;
 
         return EXIT_FAILURE;
-    }*/
+    }
 
-    char *singleWord = std::strtok(input, " ");
+    char *singleWord = std::strtok(const_cast<char *>(input.c_str()), " ");
 
     while (singleWord)
     {
